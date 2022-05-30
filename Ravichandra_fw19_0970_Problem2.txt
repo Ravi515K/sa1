@@ -1,0 +1,73 @@
+let data = [
+					{name : "RRR", genre: "Action", price:600,rating:3},
+					{name : "Bahuballi", genre: "Action", price:400,rating:5},
+					{name : "KGF", genre: "Action", price:300,rating:4},
+					{name : "3 Idiots", genre: "Comedy", price:350,rating:3},
+					{name : "Drishyam", genre: "Crime", price:800,rating:5},
+					{name : "PK", genre: "Comedy", price:600,rating:4},
+					{name : "Welcome", genre: "Comedy", price:550,rating:5},
+					{name : "Article 15", genre: "Crime", price:570,rating:4},
+					{name : "Wednesday", genre: "Crime", price:900,rating:3},
+					{name : "Housefull", genre: "Comedy", price:850,rating:4},
+];
+
+   let  netflix = {
+					data : [],
+
+					// addMovies : function(name, genre, price, rating){
+                   
+     //                let obj={};
+     //                obj.name=name;
+     //                 obj.genre=
+     //        },
+            	getMovies : function() {
+                  for(let i=0;i<data.length;i++){
+                    console.log(data[i].name)
+                  }
+              },
+           	getHighestPriceMovie : function() {
+                      let max=-Infinity;
+                      
+                       for(let i=0;i<data.length;i++){
+                         if(data[i].price>max)
+                         {
+                           max=data[i].price;
+                           console.log(data[i]);
+                         }
+                       }    
+                         
+            },
+     	getHighestPriceMovieByGenre : function(genre) {
+                              let max=-Infinity;
+                            let z=genre;
+                       for(let i=0;i<data.length;i++){
+                         
+                         if(z==genre)
+                         {
+                           if (max<data[i].price)
+                               {
+                                  max=data[i].price
+                              }
+                         }
+                       }    
+                          console.log(max);
+      },
+          	getCountOfMoviesByGenre : function(genre) {
+                            let count=0;
+                            let z=genre;
+                       for(let i=0;i<data.length;i++){
+                         
+                         if(z==data[i].genre)
+                         {
+                          count++;
+                         }
+                       }    
+                          console.log(count);
+            },
+   }
+
+           netflix.getMovies();
+          netflix.getHighestPriceMovie();
+         netflix.	getHighestPriceMovieByGenre("Crime");
+          netflix.getCountOfMoviesByGenre("Crime");
+     
